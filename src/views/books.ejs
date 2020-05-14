@@ -1,44 +1,134 @@
-<%- include('./partials/header.ejs') -%> 
-
-<div class="main">
+<%- include('./partials/header') -%> 
+<section>
+    <div class="space-80"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12"> 
-                <div class="panel">
-                    <div class="panel-body">
-
-                        <!--/Books-->
-                        <% for(let book of books) { %>
-                         
-                        <div class="row">    
-                            <br>
-                            <div class="col-md-2 col-sm-3 text-center">
-                                <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
-                            </div>
-                            <div class="col-md-10 col-sm-9">
-                                <h3><%= book.title %> </h3>
-                                <div class="row">
-                                    <div class="col-xs-9">
-                                    <h4><span class="label label-default"><%= book.author %></span></h4><h4>
-                                    <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="<%= book.id%>" class="text-muted">Read More</a></small>
-                                    </h4></div>
-                                    <div class="col-xs-3"></div>
+            <div class="col-xs-12 col-md-10 pull-right">
+                <h4>Search Box</h4>
+                <div class="space-5"></div>
+                <form action="#">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter book name">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-primary"><i
+                                    class="icofont icofont-search-alt-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="space-30"></div>
+                <div class="row">
+                    <div class="pull-left col-xs-12 col-sm-5 col-md-6">
+                        <p>Result For <a href="" class="text-primary">"How To Be a Designer"</a></p>
+                        <p><strong>6</strong> of <strong>76</strong> Book Found</p>
+                    </div>
+                    <div class="pull-right col-xs-12 col-sm-7 col-md-6">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4" for="sort">Sont By : </label>
+                                <div class="col-xs-8">
+                                    <div class="form-group">
+                                        <select name="sort" id="sort" class="form-control">
+                                            <option value="">Best Match</option>
+                                            <option value="">Best Book</option>
+                                            <option value="">Latest Book</option>
+                                            <option value="">Old Book</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <br><br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="space-20"></div>
+                <div class="row">
+                <% for(let book of books) { %>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="category-item well yellow">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="images/book/book-xs-<%=book.id%>.jpg" class="media-object" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5><%= book.title%></h5>                                    
+                                    <h6>By <%= book.author%></h6>
+                                    <div class="space-10"></div>
+                                    <div><h4><span class="label label-default"><%= book.genre %> </span></h4></div>
+                                    <ul class="list-inline list-unstyled rating-star">
+                                        <li class="active"><i class="icofont icofont-star"></i></li>
+                                        <li class="active"><i class="icofont icofont-star"></i></li>
+                                        <li class="active"><i class="icofont icofont-star"></i></li>
+                                        <li class="active"><i class="icofont icofont-star"></i></li>
+                                        <li><i class="icofont icofont-star"></i></li>
+                                    </ul>
+                                    <div class="space-10"></div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor </p>
+                                    <a href="/books/<%= book.id %> " class="text-primary">See the Book</a>
+                                </div>
                             </div>
                         </div>
-                        <hr>
-                        <% } %>               
-                        
-                        <!--/Books-->
-                    
-                        <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
-                    
                     </div>
-                </div>                                                          
-            </div><!--/col-12-->
+                <% } %>
+                    
+                </div>
+                <div class="space-60"></div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="shop-pagination pull-right">
+                            <ul id="pagination-demo" class="pagination-sm pagination">
+                                <li class="page-item first"><a href="#" class="page-link">First</a></li>
+                                <li class="page-item prev"><a href="#" class="page-link">Previous</a></li>
+                                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                <li class="page-item"><a href="#" class="page-link">6</a></li>
+                                <li class="page-item"><a href="#" class="page-link">7</a></li>
+                                <li class="page-item next"><a href="#" class="page-link">Next</a></li>
+                                <li class="page-item last"><a href="#" class="page-link">Last</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-2">
+                <aside>
+                    <h3><i class="icofont icofont-filter"></i> Filter By</h3>
+                    <div class="space-30"></div>
+                    <div class="sigle-sidebar">
+                        <h4>Category</h4>
+                        <hr>
+                        <ul class="list-unstyled menu-tip">
+                            <li><a href="#">Music</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Politics</a></li>
+                            <li><a href="#">Creative</a></li>
+                            <li><a href="#">Methematics</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Technology</a></li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-xs">See All</a>
+                    </div>
+                    <div class="space-20"></div>
+                    <div class="sigle-sidebar">
+                        <h4>Rating</h4>
+                        <hr>
+                        <ul class="list-inline list-unstyled rating-star">
+                            <li class="active"><i class="icofont icofont-star"></i></li>
+                            <li class="active"><i class="icofont icofont-star"></i></li>
+                            <li class="active"><i class="icofont icofont-star"></i></li>
+                            <li class="active"><i class="icofont icofont-star"></i></li>
+                            <li class="active"><i class="icofont icofont-star"></i></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
         </div>
     </div>
-</div>
-
-<%- include('./partials/footer.ejs') %> 
+    <div class="space-80"></div>
+</section>
+<%- include('./partials/footer') -%> 
