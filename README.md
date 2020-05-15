@@ -1,7 +1,7 @@
 # Susis-Library
 
 ## Home Page
-![Home page](/public/images/home.png?raw=true "HomePage")
+![Home page](https://raw.github.com/HermanCeaser/Susis-Library/master/public/images/home.PNG "HomePage")
 
 ## Books Page
-![Books page](/public/images/books.png?raw=true "BooksPage")
+![Books page](https://raw.github.com/HermanCeaser/Susis-Library/master/public/images/home.PNG "BooksPage")
