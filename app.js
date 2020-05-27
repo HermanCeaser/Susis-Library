@@ -18,7 +18,7 @@ const nav = [
 ];
 
 const bookRouter = require('./src/routes/bookRouter')(nav);
-
+const adminRouter = require('./src/routes/adminRouter')(nav);
 const authorRouter = express.Router();
 
 
@@ -46,6 +46,7 @@ authorRouter.route('/').get((req, res) => {
 
 //  get Requests and send Responses.
 app.use('/books', bookRouter);
+app.use('/admin', adminRouter);
 app.use('/authors', authorRouter);
 
 app.get('/', (req, res) => {
