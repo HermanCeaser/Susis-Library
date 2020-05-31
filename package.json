@@ -11,14 +11,19 @@
   "author": "Herman Ceaser <ceaserbanks09@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bootstrap": "^3.4.1",
     "chalk": "^4.0.0",
+    "cookie-parser": "^1.4.5",
     "debug": "^4.1.1",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "jquery": "^3.5.1",
     "mongodb": "^3.5.7",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
