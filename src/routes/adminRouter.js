@@ -6,36 +6,42 @@ const adminRouter = express.Router();
 const books = [
     {
         title: 'The Wind in the Willows',
+        bookId: 25,
         genre: 'Fantasy',
         author: 'Kenneth Grahame',
         read: false
     },
     {
         title: 'Life On The Mississipi',
+        bookId: 27,
         genre: 'History',
         author: 'Mark Twain',
         read: false
     },
     {
         title: 'Bill  Clinton',
+        bookId: 28,
         genre: 'Biography',
         author: 'Lev Nikolayevich Tolstoy',
         read: true
     },
     {
         title: 'Think And Grow Rich',
+        bookId: 30,
         genre: 'Entrepreneurship',
         author: 'Napolean Hill',
         read: false
     },
     {
         title: 'War and Peace',
+        bookId: 50,
         genre: 'Historical Fiction',
         author: 'Lev Nikolayevich Tolstoy',
         read: false
     },
     {
         title: 'Rich Dad Poor Dad',
+        bookId: 59,
         genre: 'Fiction',
         author: 'Napolean Hill',
         read: false

@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const passport = require('passport');
+// const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
@@ -62,24 +62,19 @@ app.use('/admin', adminRouter);
 app.use('/authors', authorRouter);
 app.use('/auth', authRouter);
 
+app.use((req, res, next) => {
+    if (req.user) {
+        res.locals.user = req.user;
+    }
+    debug(res.locals.user);
+    next();
+});
+
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Library',
         nav,
-    });
-});
-
-app.get('/signup', (req, res) => {
-    res.render('signup', {
-        title: 'Susis Library',
-        nav,
-    });
-});
-
-app.get('/signin', (req, res) => {
-    res.render('signin', {
-        title: 'Susis Library',
-        nav,
+        user: req.user || null,
     });
 });
 

@@ -64,36 +64,40 @@
 
 
                     <div class="nav navbar-right">
-                        <div class="active-user navbar-left active">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="/images/active_user.png" class="img-circle img-thumbnail"
-                                            alt="library" />
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#"> <span><i class="icofont icofont-user"></i></span> Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <span><i class="icofont icofont-notification"></i></span>
-                                                Notifications</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <span><i class="icofont icofont-settings"></i></span>
-                                                Settings</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <span><i class="icofont icofont-read-book"></i></span>My
-                                                Books</a>
-                                        </li>
-                                        <li>
-                                            <a href="/signin"> <span><i class="icofont icofont-logout"></i></span> Sign in</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                       <% if (user) { %>
+                            <div class="active-user navbar-left active">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <img src="/images/active_user.png" class="img-circle img-thumbnail"
+                                                alt="library" />
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="#"> <span><i class="icofont icofont-user"></i></span> Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <span><i class="icofont icofont-notification"></i></span>
+                                                    Notifications</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <span><i class="icofont icofont-settings"></i></span>
+                                                    Settings</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <span><i class="icofont icofont-read-book"></i></span>My
+                                                    Books</a>
+                                            </li>
+                                            <li>
+                                                <a href="/auth/signout"> <span><i class="icofont icofont-logout"></i></span> Logout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        } <%  } else { %>
+                            <a class="btn btn-sm btn-primary"  href="/auth/signin">Sign In</a>
+                        <% } %>
                     </div>
 
                     <div class="navbar-right in fade" id="mainmenu">
@@ -116,24 +120,6 @@
 
         <div class="space-100"></div>
          
-        <div class="header-text">
-            <div class="container">
-                <div class="row wow fadeInUp">
-                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
-                        <div class="jumbotron">
-                            <h1 class="text-white">Choose Your Book and Enjoy</h1>
-                        </div>
-                        <div class="title-bar white">
-                            <ul class="list-inline list-unstyled">
-                                <li><i class="icofont icofont-square"></i></li>
-                                <li><i class="icofont icofont-square"></i></li>
-                            </ul>
-                        </div>
-                        <div class="space-40"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <div class="space-100"></div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V2</title>
+	<title><%=title%>-SignIn</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -17,6 +17,10 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
+				<div id="login-logo" style="background-color: rgb(51, 122, 183); padding: 1em; border-radius: 50%;">
+					<a href="/" class="show"><img src="/images/logo.png" alt="library"></a>
+				</div>
+				<br> 
 				<form method="post" action="/auth/signIn" class="login100-form validate-form">
 					<div class="login100-form-title p-b-26">
 						Login To Susis Library
@@ -26,16 +30,16 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" >
-						<input class="input100" type="text" name="username">
-						<span class="focus-input100" data-placeholder="Username"></span>
+						<input class="input100" type="text" name="username" placeholder="Username">
+						<span class="focus-input100" placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="password">
-						<span class="focus-input100" data-placeholder="Password"></span>
+						<input class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
@@ -52,7 +56,7 @@
 							Don’t have an account?
 						</span>
 
-						<a class="txt2" href="/signup">
+						<a class="txt2" href="/auth/signup">
 							Sign Up
 						</a>
 					</div>
