@@ -11,7 +11,7 @@
   "author": "Herman Ceaser <ceaserbanks09@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^3.4.1",
     "chalk": "^4.0.0",
