@@ -7,7 +7,7 @@ const bookRouter = express.Router();
 
 const router = (nav) => {
     const { getIndex, getById } = bookController(bookService, nav);
-
+    
     bookRouter.route('/')
         .get(getIndex);
 
