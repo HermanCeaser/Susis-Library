@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "DEBUG=app,app:* & node app.js",
+    "start": "DEBUG=app,app:* & nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint app.js"
   },
@@ -28,6 +28,7 @@
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "eslint": "^8.22.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -41,7 +42,9 @@
     "delay": "2500",
     "env": {
       "NODE_ENV": "development",
-      "PORT": 4000
+      "PORT": 4000,
+      "DB_HOST":"mongodb+srv://admin:admin123@first-cluster.q0jzn.mongodb.net/?retryWrites=true&w=majority",
+      "DB_NAME":"libraryApp"
     }
   }
 }

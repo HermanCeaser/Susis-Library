@@ -7,7 +7,7 @@ const debug = require('debug')('app:bookController');
 
 function bookController(bookService, nav) {
     function getIndex(req, res) {
-        const url = 'mongodb://localhost:27017';
+        const url = process.env.DB_HOST || 'mongodb://localhost:27017';
         const dbName = 'libraryApp';
 
         (async function mongo() {
@@ -38,7 +38,7 @@ function bookController(bookService, nav) {
             id
         } = req.params;
 
-        const url = 'mongodb://localhost:27017';
+        const url = process.env.DB_HOST || 'mongodb://localhost:27017';
         const dbName = 'libraryApp';
 
         (async function mongo() {

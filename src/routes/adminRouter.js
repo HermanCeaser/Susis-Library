@@ -51,14 +51,14 @@ const books = [
 const router = (nav) => {
     adminRouter.route('/')
         .get((req, res) => {
-            const url = 'mongodb://localhost:27017';
+            const url = process.env.DB_HOST || 'mongodb://localhost:27017';
             const dbName = 'libraryApp';
 
             (async function mongo() {
                 let client;
                 try {
                     client = await MongoClient.connect(url);
-                    debug('Connected to the server "http://localhost:27017" successfully');
+                    debug('Connected to the server' + url + 'successfully');
 
                     const db = client.db(dbName);
 

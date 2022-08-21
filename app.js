@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 // const chalk = require('chalk');
@@ -10,6 +11,10 @@ const session = require('express-session');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const DB_HOST = process.env.DB_HOST;
+const DB_NAME = process.env.DB_NAME;
+
+
 
 
 const nav = [

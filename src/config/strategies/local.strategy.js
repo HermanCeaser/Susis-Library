@@ -7,7 +7,7 @@ module.exports = function localStrategy() {
     passport.use(new Strategy(
         { usernameField: 'username', passwordField: 'password' },
         (username, password, done) => {
-            const url = 'mongodb://localhost:27017';
+            const url = process.env.DB_HOST || 'mongodb://localhost:27017';
             const dbName = 'libraryApp';
 
             // check whether user exists in the Database

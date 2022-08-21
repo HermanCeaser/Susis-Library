@@ -15,7 +15,7 @@ const router = (nav) => {
         })
         .post((req, res) => {
             const { username, password } = req.body;
-            const url = 'mongodb://localhost:27017';
+            const url = process.env.DB_HOST || 'mongodb://localhost:27017' ;
             const dbName = 'libraryApp';
 
             // Add user to the Database
